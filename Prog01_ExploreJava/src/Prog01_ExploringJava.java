@@ -1,13 +1,8 @@
 /**
  * This program is written to experiment with the use of the
- * 'print' and 'println' methods, variable declaration, string concatenation
- * 
- * CSC 1350 Programming project No 1
- * Section 1 [or 2 or 3]
- * 
+ * 'print' and 'println', variable declaration, and string concatenation
  * @author Josh Bankston
  * @since 1/28/2019
- * 
  **/
 
 public class Prog01_ExploringJava {
