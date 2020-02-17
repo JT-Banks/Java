@@ -1,9 +1,6 @@
 /**
  * Bank card Random number Generator
  * 
- * CSC 1350 Programming Project No.4
- * Section 1
- * 
  * @author Josh Bankston
  * @since 02/27/2019
  *
