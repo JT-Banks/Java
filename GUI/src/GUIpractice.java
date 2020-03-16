@@ -1,7 +1,5 @@
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -55,7 +53,7 @@ public class GUIpractice implements ActionListener {
 		
 		frame.setVisible(true);
 	}
-
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -66,8 +64,6 @@ public class GUIpractice implements ActionListener {
 		
 		if (user.contentEquals("User") && password.equals("abc")) {
 			success.setText("Login Successful");
-		}
-		
+		}	
 	}
-
 }
