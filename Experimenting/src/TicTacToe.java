@@ -5,10 +5,10 @@ public class TicTacToe {
 	public static void main(String[] args) {
 
 		char[][] gameBoard = {{ ' ', '|', ' ', '|', ' '}, 
-							  {'-', '+', '-', '+', '-'},
-							  {' ', '|', ' ', '|', ' '}, 
-							  {'-', '+', '-', '+', '-'}, 
-							  {' ', '|', ' ', '|', ' '}};
+				      {'-', '+', '-', '+', '-'},
+				      {' ', '|', ' ', '|', ' '}, 
+				      {'-', '+', '-', '+', '-'},
+				      {' ', '|', ' ', '|', ' '}};
 		
 		printGame(gameBoard);
 		Scanner in = new Scanner(System.in);
@@ -30,8 +30,6 @@ public class TicTacToe {
 				System.out.print(c);
 			}
 			System.out.println();
-		}
-		
+		}	
 	}
-
 }
