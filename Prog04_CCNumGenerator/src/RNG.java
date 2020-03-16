@@ -9,6 +9,7 @@ import java.util.Scanner; //Import keyboard use for user
 public class RNG {
 
 	public static void main(String[] args) {
+		
 		Scanner in = new Scanner(System.in);
 		int num1; //2nd set of 4 numbers
 		int num2; //3rd set of 4 numbers
@@ -74,12 +75,3 @@ public class RNG {
 		}		
 	}	
 }
-
-	
-
-
-
-
-	
-
-
