@@ -1,8 +1,3 @@
-//Student Name: Josh Bankston
-//LSU ID: jbank54
-//Lab Section: 1
-//Assignment: Files Project
-//Submission Time: 7:52 P.M
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
