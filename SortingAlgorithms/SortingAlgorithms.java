@@ -1,8 +1,3 @@
-//Student Name: Josh Bankston
-//LSU ID: jbank54
-//Lab Section: 2
-//Assignment: SortingAlgorithms
-//Submission Time: 2:32 P.M
 package SortingAlgorithms;
 import java.util.Random;
 import java.time.Instant;
