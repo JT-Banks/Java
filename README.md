@@ -1,2 +1,2 @@
 # Java
-Various school projects, as well as projects used to learn Java
+Various school projects, as well as projects I did myself to better understand Java and OOP
