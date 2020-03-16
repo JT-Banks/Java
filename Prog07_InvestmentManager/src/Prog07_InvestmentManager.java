@@ -1,9 +1,5 @@
 /*
  * Investment Project
- * 
- * CSC 1350 Programming project No. 7 and No. 8
- * Section 1
- * 
  * @author Joshua Bankston
  * @since 4/3/2019
  * 
@@ -145,8 +141,7 @@ public class Prog07_InvestmentManager {
 
 	/*
 	 * Method to Bubble sort
-	 * 
-	 * CSC 1350 Programming Project No. 7 and No. 8
+	 *
 	 * Section 1
 	 * 
 	 * @author Joshua Bankston
@@ -174,7 +169,7 @@ public static void BubbleSort(double[] array){ //Bubble sort method
 }
 /*
  *  Method to swap elements in the array to assist the Bubble sort
- *  CSC 1350 Programming Project No. 7 and No. 8
+ *  
  *  Section 1
  *  
  *  @author Joshua Bankston
