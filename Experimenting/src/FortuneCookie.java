@@ -14,7 +14,6 @@ public class FortuneCookie {
 
 	public static void main(String[] args) {
 		
-		
 		Random rand = new Random();
 		int r = rand.nextInt(fortunes.length);
 		System.out.println(fortunes[r]);
