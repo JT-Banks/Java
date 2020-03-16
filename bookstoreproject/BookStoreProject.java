@@ -1,14 +1,7 @@
-//Student Name: Josh Bankston
-//LSU ID: jbank54
-//Lab Section: 2
-//Assignment: BookStoreProject
-//Submission Time: 3:00 P.M
 package bookstoreproject;
 
-
 public class BookStoreProject {
-
-    
+   
     public static void main(String[] args) {
         //Main method to implement information
         BookStore myStore = new BookStore("Highland road, LSU, 70808", "LSU Book Store");
