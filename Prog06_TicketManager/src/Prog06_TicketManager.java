@@ -1,13 +1,3 @@
-/*
- * Ticket Manager Project
- * 
- * CSC 1350 Programming project No 6
- * Section 1
- * 
- * @author Josh Bankston
- * @since 3/25/2019
- * 
- */
 import java.util.Scanner;
 public class Prog06_TicketManager {
 	
