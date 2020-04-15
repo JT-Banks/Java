@@ -1,19 +1,14 @@
-//Student Name: Josh Bankston
-//LSU ID: jbank54
-//Lab Section: 2
-//Assignment: SortingAlgorithms
-//Submission Time: 2:32 P.M
-package SortingAlgorithms;
 import java.util.Random;
 import java.time.Instant;
 import java.time.Duration;
 import java.util.Scanner;
+
 public class SortingAlgorithms {
 	static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
     
         System.out.println("Please enter the size of your file: ");
-       // Scanner input = new Scanner(System.in);
+      //Scanner input = new Scanner(System.in);
         int listSize = input.nextInt();
         int[] array = new int[listSize];
         Random rand = new Random();
