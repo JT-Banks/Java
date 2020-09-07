@@ -32,7 +32,7 @@ public class Email {
 			if(print.equals("p")) {
 				System.out.println(em1.printInfo());
 			}
-		System.out.println("\nGoodbye, and thank you for using Spar Systems!"); 
+		System.out.println("\nGoodbye, and thank you for using Sparx Systems!"); 
 		in.close();
 	}
 }
