@@ -3,13 +3,13 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class LoopyLoop {
+public class JediKnight_Ver2 {
 	
 	private static int maxEnemyHealth = 165;
 	private static int enemyAttackDmg = 15;
 	private static int health = 105;
 	private static int attackDmg = 55;
-	private static int mana = 14;
+	private static int mana = 1400;
 	private static int numHealthPots = 3;
 	private static int healthPotionHealAmount = 40;
 	private static int healthPotionDropChance = 20;
@@ -18,14 +18,18 @@ public class LoopyLoop {
 	private static int count2 = 0;
 	private static int expUp = 0;
 	private static int level = 1;	
+	private static int expThreshold = 100;
  
 	public static void main(String[] args) {
+		
 		
 		Spells spells = new Spells();
 		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
 		Random rand = new Random();
-		//String Array for enemies, more can be added, or taken away, Probably best to put this into another class, along with relative variables
+		/*
+		 * String Array for enemies, more can be added, or taken away, Probably best to put this into another class, along with relative variables
+		 */
 		String[] enemies = {"Skeleton", "Zombie", "Goblin", "Tiny Dragon", "Ben Afleck", "Little weird man", "Huge Bee", "Jeff", "Crazy Ray"};			
 		//Set a variable running to true, to allow the program to run, so that if the user chooses to end the game early, they can do so
 		boolean running = true;
@@ -33,14 +37,19 @@ public class LoopyLoop {
 		System.out.println("Welcome to Mysterical World of Mysterical Things!");
 		System.out.println("Please press the number corresponding the action you wish to take.");	
 		System.out.println("==================================================================");
-		//Clause to keep the game running with invalid inputs
+		/*
+		 * Clause to keep the game running with invalid inputs
+		 */
 		GAME:			
 		while(running) {
 	
 			int enemyHealth = ThreadLocalRandom.current().nextInt(55, maxEnemyHealth);
 			String enemy = enemies[rand.nextInt(enemies.length)];
 			System.out.println("\n\t### " + enemy + " has appeared! ###\n");
-			//The only bug so far, (not nearly enough testing) is this. It will display twice to the user when exiting the switch menu, or as they know it, magic menu(Methods will fix this, unsure if this is avoidable at this time)
+			/*
+			 * The only bug so far, (not nearly enough testing) is this. It will display twice to the user when exiting the switch menu, or as they know it, 
+			 * magic menu(Methods will fix this, unsure if this is avoidable at this time)
+			 */
 			while (enemyHealth > 0) {
 				 System.out.println("\n\tYour HP: " + health);
 				 System.out.println("\tYour Mana: " + mana);
@@ -51,64 +60,86 @@ public class LoopyLoop {
 				 System.out.println("\t3. Use potion");
 				 System.out.println("\t4. Run\n");
 				 String input = in.nextLine();
-				 //Attack command, should later be converted to a method, to clean up clutter code				
-				if (input.equals("1")) {
+				 /*
+				  * Attack command, should later be converted to a method, to clean up cluttered code				
+				  */
+				if (input.equals("1")) {					
 					int damageDealt = ThreadLocalRandom.current().nextInt(28, attackDmg);
 					int damageTaken = ThreadLocalRandom.current().nextInt(10, enemyAttackDmg);
 					enemyHealth -= damageDealt;
 					health -= damageTaken;
 					System.out.println("\t>>> You hit " + enemy + " for " + damageDealt + " damage <<<");
-					System.out.println("\t>>>" + enemy + " hit you for " + damageTaken + " damage <<<");
+					System.out.println("\t>>> " + enemy + " hit you for " + damageTaken + " damage <<<");
 					System.out.println();
-					//Check to see if the enemy died each time the user inputs "1", or attack. (This can possibly stay in main, while using an attack method				
+					/*
+					 * Check to see if the enemy died each time the user inputs "1", or attack.
+					 * (This can possibly stay in main, while using an attack method						
+					 */
 					if(enemyHealth < 0) {
 						count++;
 						System.out.println("=========================================");
 						System.out.println(" *** " + enemy +" was defeated! ***");
 						System.out.println("### You have " + health + " HP ### \n### And " + mana + " mana ###");
 						expUp += expUp + 25;			
-						//Check to see if experience gained exceeds 99, if so, level up, this checks after every enemy defeated, can also be put into a method to clean up clutter						
-						if(expUp > 99) {
+						/*
+						 * Check to see if experience gained exceeds 99, if so, level up, this checks after every enemy defeated, 
+						 * can also be put into a method to clean up clutter 						
+						 */
+						if(expUp > expThreshold) {
 			    			level++;
+			    			expThreshold *= 1.2;
 			    			health = health+22;
 			    			attackDmg = attackDmg + 2;
 			    			mana = mana + 7;
 			    			System.out.println("****** LEVEL UP!!! ******");
 			    			System.out.println("You are now level " + level + "!");
 			    			System.out.println("Each level up rewards 22 to total health, +2 to attack, and +7 to mana!");
-			    			//Random chance for potion drop, put into a method to clean up clutter(CODE IS TOO CLUTTERED!!)						
+			    			/*
+			    			 * Random chance for potion drop, put into a method to clean up clutter(CODE IS TOO CLUTTERED!! 
+			    			 * Doesn't follow OOP Design)	 					
+			    			 */
 						    if (rand.nextInt(100) < healthPotionDropChance) {					
 						    	numHealthPots++;
 						    	System.out.println("### The " + enemy + " dropped a health potion ###");
 						    	System.out.println("### You now have " + numHealthPots + " health potion(s) ###");					
-						    	//Attempting to fix Experience calculating for case(This issue appears to fixed as of 12/3/2019(7:14 A.M)
-						    		if(expUp > 99) {
-						    			level++;
-						    			health = health+22;
-						    			attackDmg = attackDmg + 2;
-						    			mana = mana + 7;
-						    			System.out.println("****** LEVEL UP!!! ******");
-						    			System.out.println("You are now level " + level + "!");
-						    			System.out.println("Each level up rewards 22 to total health, +2 to attack, and +7 to mana!");
-						    		}
+						    	/*
+						    	 * Attempting to fix Experience calculating for case(This issue appears to fixed as of 12/3/2019(7:14 A.M) 
+						    	 */
+								/*
+								 * if(expUp > 99) { level++; health = health+22; attackDmg = attackDmg + 2; mana
+								 * = mana + 7; System.out.println("****** LEVEL UP!!! ******");
+								 * System.out.println("You are now level " + level + "!"); System.out.
+								 * println("Each level up rewards 22 to total health, +2 to attack, and +7 to mana!"
+								 * ); }
+								 */
 						    }
 					}
 				}
-					//Each loop pass, check to see if the user's health is less than 1, if so, they died, and this will terminate the program. Once again...I really need to put this clutter into methods					
+					/*
+					 * Each loop pass, check to see if the user's health is less than 1, if so, they died, 
+					 * and this will terminate the program. Once again...I really need to put this clutter into methods	 				
+					 */
 					if(health < 1) {
 						System.out.println("\t=== You died! ===");
 						break;
 					}
-					//This entire section is held up with old glue and the miracles of christ, I really need to USE METHODS(At this point you can really see I've learned my lesson)					
+					/*
+					 * This entire section is held up with old glue and the miracles of christ, 
+					 * I really need to USE METHODS(At this point you can really see I've learned my lesson)					 					
+					 */
 				}else if (input.equals("2")) {
 					boolean set=true;
 					while(set) { 
-						//First thing's first, check to see if the user is dead, if so, why execute needless code, so we'll terminate if so						
+						/*
+						 * First thing's first, check to see if the user is dead, if so, why execute needless code, so we'll terminate if so						
+						 */
 						if(health < 1) {
 							System.out.println("You pitifully limp out of the dungeon, too weak to go on!");
 								return;
 							}
-						//Display vital information for the user, this will loop each spell cast, so you can keep track of mana, HP and enemy HP						
+						/*
+						 * Display vital information for the user, this will loop each spell cast, so you can keep track of mana, HP and enemy HP						
+						 */
 						System.out.println("============================================");
 						System.out.println("\tYour HP: " + health);
 						System.out.println("\tYour Mana: " + mana);
@@ -121,8 +152,10 @@ public class LoopyLoop {
 						System.out.println("5. Heal (Cost: 36 mana, Heals: 35 to 55 HP)");						
 						System.out.println("6. Exit this menu");
 						System.out.println("____________________________________________");
-						int spellInput = in.nextInt();
-						//Here's where it gets real dicey, I coded this so bad I can hardly understand it myself, METHODS!!!						
+						int spellInput = Integer.parseInt(in.nextLine());
+						/*
+						 * Here's where it gets real dicey, I coded this so bad I can hardly understand it myself, METHODS!!!						
+						 */
 						switch (spellInput) {
 						
 						case 1: if(mana >= 6) {
@@ -225,7 +258,12 @@ public class LoopyLoop {
 
 						default: break;					
 						}	
-						//Check to see if enemy has died, if so, tally experience and check if user can level up
+						/*
+						 * Check to see if enemy has died, 
+						 * if so, tally experience and check 
+						 * if user can level up	
+						 * 				 
+						 */
 						if(enemyHealth < 0) {
 								count++;
 								System.out.println("=========================================");
@@ -298,12 +336,12 @@ public class LoopyLoop {
 				System.out.println("####################");
 				System.out.println("Thanks for playing!");
 				System.out.println("####################");
-				System.out.println("Press 5 to see your score!");
+				System.out.println("Press 6 to see your score!");
 				String input2 = in.nextLine();
-					if (input2.equals("5")){
-						System.out.println("You defeated " + count + " enemies");
-						System.out.println("Max level achieved: " + level);
-						System.out.println("And you used " + count2 + " potions");					
+				if (input2.equals("6")){
+					System.out.println("You defeated " + count + " enemies");
+					System.out.println("Max level achieved: " + level);
+					System.out.println("And you used " + count2 + " potions");					
 				}
 					else {
 						System.out.println("Invalid input");
