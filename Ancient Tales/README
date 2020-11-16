@@ -7,11 +7,11 @@ Structure:
        |
        |
        |
-    Creature   <-- Player and enemy inherit creature
+    Creature   <-- parent
        |
        /\
       /  \
      /    \
     /      \
    |        |
-Player   Monster
+Player   Monster <-- children
