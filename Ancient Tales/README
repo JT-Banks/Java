@@ -1,0 +1,17 @@
+My take on a traditional Role Playing Game (RPG)
+Will include various classes, armor, weapons, characters, towns, enemies, and abilities...
+
+Structure:
+
+     Object      
+       |
+       |
+       |
+    Creature   <-- Player and enemy inherit creature
+       |
+       /\
+      /  \
+     /    \
+    /      \
+   |        |
+Player   Monster
