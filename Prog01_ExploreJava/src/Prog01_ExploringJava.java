@@ -6,29 +6,29 @@
  **/
 public class Prog01_ExploringJava {
 
-	public static void main(String[] args) {
+   public static void main(String[] args) {
 		
-		int first = 3, second = 10;
-   //Step 2
-		System.out.print("First name: John");
-		System.out.println("Last name: Tyler");
+	 int first = 3, second = 10;
+//Step 2
+	System.out.print("First name: John");
+	System.out.println("Last name: Tyler");
 		
-		System.out.println();	
-   //Step 4
-		System.out.println("First name: John");
-		System.out.println("Last name: Tyler");
-		System.out.println();
+	System.out.println();	
+//Step 4
+	System.out.println("First name: John");
+	System.out.println("Last name: Tyler");
+	System.out.println();
 		
-   //Step 6
-				System.out.print("first name:");
-				System.out.println("John");				
+//Step 6
+	System.out.print("first name:");
+	System.out.println("John");				
    //Step 11
 				
-				System.out.println();
-				System.out.println("first="+first);
+	System.out.println();
+	System.out.println("first="+first);
 				
-   //Step 15
-				double average=(first+second)/2.0;
-				System.out.println("Average="+average);
+//Step 15
+	double average=(first+second)/2.0;
+	System.out.println("Average="+average);
 	}
 }
