@@ -43,17 +43,17 @@ public class RNG {
 			int temp3 = num3;
 			sum = first4Digits;
 
-			while(temp1>0) {
+			while(temp1 > 0) {
 				sum += temp1 % 10;
 				temp1 /= 10;
 			}
 
-			while(temp2>0) {
+			while(temp2 > 0) {
 				sum += temp2 % 10;
 				temp2 /= 10;
 			}
 
-			while(temp3>0) {
+			while(temp3 > 0) {
 				sum += temp3 % 10;
 				temp3 /= 10;
 			}
