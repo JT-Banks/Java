@@ -11,7 +11,7 @@ public class RNG {
 		int sum = 0;
 		int userInput; //1st set of 4 numbers from user
 		int userCards; //Declaring how many cards
-		
+
 		//Gets value for the loop, to determine how many times it will generate valid cards
 		System.out.println("How many cards would you like to enter? \n"); 
 		userCards = in.nextInt();		
@@ -19,12 +19,12 @@ public class RNG {
 		userInput = in.nextInt(); 
 		//If user input 4 digits only, falls out and prompts next segment
 		while (userInput < 0 || userInput > 9999) { 
-			System.out.println("Invalid input. Please enter four digits ONLY."); //Notifying the user of invalid entry
+			System.out.println("Invalid input. Please enter four digits ONLY."); 
 			System.out.println("You entered: " +userInput);					
-			System.out.println("Enter the first four digits of your credit card number."); //Prompts user again
+			System.out.println("Enter the first four digits of your credit card number."); 
 			userInput=in.nextInt(); //Record next input
 		}
-		
+
 		int first4Digits = 0;
 		int temp = userInput;
 
@@ -32,8 +32,8 @@ public class RNG {
 			first4Digits += temp % 10;
 			temp /= 10;
 		}
-
-		while(userCards > 0) { //Loop to validate, then loop until desired cards are generated
+		//Loop to validate, then loop until desired cards are generated
+		while(userCards > 0) { 
 
 			num1 = 0 + (int)(Math.random()*(9999) + 1);		//Generates random numbers
 			num2 = 0 + (int)(Math.random()*(9999) + 1);		//Between 0 and 9999
@@ -57,8 +57,8 @@ public class RNG {
 				sum += temp3 % 10;
 				temp3 /= 10;
 			}
-
-			if (sum %10 == 0) {  			//If sum checks out, print the card number
+			//If sum checks out, print the card number
+			if (sum %10 == 0) {  			
 				userCards--;
 				System.out.printf("%04d%04d%04d%04d\n", userInput, num1, num2, num3);
 				in.close();
