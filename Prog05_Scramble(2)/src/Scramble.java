@@ -7,7 +7,6 @@ public class Scramble {
 
         boolean userDone = true; 
         String word;
-
         Scanner in = new Scanner(System.in);                      
         getInputAndScramble(in); //Extracted method to get Scanner input and scramble
 
