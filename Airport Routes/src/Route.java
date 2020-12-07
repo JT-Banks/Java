@@ -18,7 +18,6 @@ public class Route {
 		pq = new PriorityQueue<Node>(V, new Node()); 
 		parent = new int[V];     
 	}
-
 	//Function for Dijkstra's Algorithm 
 	public void modDijkstra(List<List<Node>> adj, int src, int dest) {
 		this.adj = adj;
@@ -48,7 +47,6 @@ public class Route {
 			e_Neighbors(u, dest);
 		}
 	}
-
 	//Function to process all the neighbors 
 	//of the passed node 
 	private void e_Neighbors(int u, int dest) {
@@ -75,6 +73,7 @@ public class Route {
 			}
 		}
 	}
+	
 	public static void main(String arg[]) throws FileNotFoundException {
 
 		File airportsFile = new File("airports.txt");
@@ -115,7 +114,6 @@ public class Route {
 			int targetIndex = map.get(destination);
 			adj.get(sourceIndex).add(new Node(targetIndex, arrival, departure));
 		}
-
 
 		int source = map.get(arg[0]);
 		int destination = map.get(arg[1]);
