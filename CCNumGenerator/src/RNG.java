@@ -33,7 +33,7 @@ public class RNG {
 			temp /= 10;
 		}
 
-		while(userCards>0) { //Loop to validate, then loop until desired cards are generated
+		while(userCards > 0) { //Loop to validate, then loop until desired cards are generated
 
 			num1 = 0 + (int)(Math.random()*(9999) + 1);		//Generates random numbers
 			num2 = 0 + (int)(Math.random()*(9999) + 1);		//Between 0 and 9999
