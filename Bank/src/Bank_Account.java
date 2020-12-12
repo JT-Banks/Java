@@ -108,6 +108,3 @@ public class Bank_Account {
 		scan.close();
 	}
 }				
-
-
-
