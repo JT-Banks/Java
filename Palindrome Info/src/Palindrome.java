@@ -17,7 +17,7 @@ public class Palindrome {
         System.out.println("-----------------------------------------------------------------------");  
         
         //Searching for a name
-        String name = "Josh";
+        String name = "James";
       
         int targetIndex = Utilities.BinarySearchNames(namesArray, name);
         
@@ -40,5 +40,4 @@ public class Palindrome {
                                
         System.out.println("-----------------------------------------------------------------------");             
     }
-    
 }
