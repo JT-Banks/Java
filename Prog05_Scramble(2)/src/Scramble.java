@@ -9,7 +9,7 @@ public class Scramble {
 		String word;
 		Scanner in = new Scanner(System.in);                      
 		getInputAndScramble(in); //Method to get Scanner input and scramble
-
+		
 		do {
 			System.out.println("Would you like to enter another word? y/n"); //Prompting user to get input
 			word = in.next();
@@ -25,7 +25,6 @@ public class Scramble {
 			}
 		}
 		while (userDone); //continue until "n"
-
 	}
 
 	private static void getInputAndScramble(Scanner in) {
@@ -35,21 +34,19 @@ public class Scramble {
 	}
 
 	private static String swapLetters(String word) { 
-
+		
 		/* Convert word into an ArrayList of characters. 
          * Create ArrayList size of word, 
          * convert String word into a char array and insert every char in                
          * the char array into our ArrayList.
 		 */
-
+		
 		ArrayList<Character> chars = new ArrayList<>(word.length());
 		for (char c : word.toCharArray()) {
 			chars.add(c);
 		}
-
 		//Shuffle
 		Collections.shuffle(chars.subList(1, chars.size()-1));
-
 		//Add shuffled letters into an array to output as a word entity
 		char[] shuffled = new char[chars.size()];
 		for (int i = 0; i < shuffled.length; i++) {
