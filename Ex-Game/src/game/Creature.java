@@ -16,13 +16,8 @@ public class Creature {
 	protected static int enemyHP = 150;
 	
 	public static int playerAttack(int attackDmg) {
-		int damageDealt = ThreadLocalRandom.current().nextInt(5, attackDmg);
+		int damageDealt = ThreadLocalRandom.current().nextInt(7, attackDmg);
 		return damageDealt;
-	}
-	
-	public static int damageDealt(int damage) {
-		int damageTaken = ThreadLocalRandom.current().nextInt(25, damage);
-		return damageTaken;
 	}
 	
 	public static int defend(int dmgReduction) {

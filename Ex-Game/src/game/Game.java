@@ -8,32 +8,42 @@ public class Game extends Enemies{
 		Random rand = new Random();
 		Mage mage = new Mage();
 		Enemies enemies = new Enemies();
-		String[] enemyArray = {enemies.brittleSkeleton()};
+		String[] enemyArray = {Enemies.brittleSkeleton()};
+		int enemyRemainingHealth = mage.getEnemyHp(Mage.attack());
+		int damageTaken = 0;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Welcome to my work in progress.\nThe goal of this game is to practice the structure of 'good' code.");
 		System.out.println("Current version: Alpha (ver 1.0)");
-		System.out.println("Please choose a class: \n##Warrior##\n~*Mage*~\n>>Rogue<<\n**Necromancer**");
-		System.out.println("Currently during Alpha, only mage is available. Please select 'Mage'");
+		System.out.println("Please choose a class: \nWarrior\nMage\nRogue\nNecromancer");
+		/*
+		System.out.println("For a summary of each class's playstyle, simply type: [name of class] info, otherwise type: no thanks");
+		String info = scan.nextLine();
+		if(info != null && info.equalsIgnoreCase("mage info"))
+			System.out.println("[~Mage focuses on dealing damage primarily. It has poor physical defense, but very high magical defense."
+					+ "\nMage's specializes in dealing a lot of damage, for a steep cost.\nBalancing damage, resources, and surviving is key.~]");
+		else if(info.equalsIgnoreCase("no thanks"))			
+		*/
+		//System.out.println("Currently during Alpha, only mage is available. Please select 'Mage'");
 		String answer = scan.nextLine();
 		boolean running = false;
 		if(answer.equalsIgnoreCase("Mage")) {
+			System.out.println("You have selected 'Mage', enjoy your playthrough!");
 			running = true;
 			GAME:
 				while(running) {
 					String enemy = enemyArray[rand.nextInt(enemyArray.length)];
-					System.out.println("\n\t ### " +enemy+ " has appeared!###");
+					System.out.println("\n\t ### " +enemy+ " ###");
 
-					//while(Enemies.hp > 0)
-					System.out.println("\nYour HP: " );
+					System.out.println("\nYour HP: " + mage.getHp());
 					System.out.println("Your Mana: " );
-					System.out.println(enemy + "'s HP: " );
+					System.out.println(enemy + "'s HP: " + enemyRemainingHealth);
 					System.out.println("\nWhat would you like to do?");
-					System.out.println("1. Attack");
-					System.out.println("2. Magic");
-					System.out.println("3. Use items");
-					System.out.println("4. Defend");
-					System.out.println("5. Scan enemy");
-					System.out.println("6. Run\n");
+					System.out.print("1. Attack");
+					System.out.println("\t  4. Magic");
+					System.out.print("2. Use items");
+					System.out.println("\t  5. Defend");
+					System.out.print("3. Scan enemy");
+					System.out.println("\t  6. Run\n");
 					String input = scan.nextLine();
 
 					if(input.equals("1")) {
@@ -41,6 +51,12 @@ public class Game extends Enemies{
 					}
 				}
 		}
+		/*
+		 * else {
+		 *	//System.out.println("Wrong input, try again");
+		 * //answer = scan.nextLine();
+		}
+		*/
 	}
 }
 
