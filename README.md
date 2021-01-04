@@ -35,6 +35,6 @@ Spells
 Potion
 Run
 
-User also levels up based on experience gained which improve their chances of getting a higher score. User score is 
-kept and displayed if desired after game over, or user quits.
+User also levels up based on experience gained which improve their chances of getting a higher score. 
+User score is kept and displayed if desired after game over, or user quits.
 ```
