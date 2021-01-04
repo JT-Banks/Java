@@ -25,10 +25,12 @@ __textRPG__
 Personal project of mine that I started after my first programming class at LSU. Although this program is relativey 
 straight forward, and simple, it is my first solo project. The program is a fighting gauntlet where the user faces 
 against random enemies, with controlled random stats. The user has commands such as;
+
 Attack
 Spells
 Potion
-Run.
+Run
+
 User also levels up based on experience gained which improve their chances of getting a higher score. User score is 
 kept and displayed if desired after game over, or user quits.
 ```
