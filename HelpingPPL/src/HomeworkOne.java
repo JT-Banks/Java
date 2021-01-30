@@ -1,9 +1,3 @@
-/*
-*File:HomeworkOne.java
-*Author: Alana Bellamy
-*Date: May 27, 2020
-*Purpose: To gain information on the student, their student I.D, percentage scores, age, and the current temperature.
-*/
 
 //Import each required Java program
 import java.util.Scanner;
@@ -24,7 +18,7 @@ public class HomeworkOne {
 		double tempC = 0;
 		double tempF = 0;
 		double average = 0;
-		char d = '°';
+		char d = 'Â°';
 		// Create a new scanner
 		Scanner scan = new Scanner(System.in);
 
@@ -64,7 +58,7 @@ public class HomeworkOne {
 		System.out.printf("Average quiz score: %.1f\n", average);
 		System.out.println("Age in months: " + months);
 		System.out.println("Age in years: " + years);
-		System.out.println("Temperature in Celsius: " + tempC + "°");
+		System.out.println("Temperature in Celsius: " + tempC + "Â°");
 		System.out.printf("Temperature in Farenheit: %.1f%c", tempF, d);
 
 		scan.close();
